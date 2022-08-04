@@ -178,7 +178,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Attractions" />
+                android:text="Attractions"
+                android:textColor="@color/black"
+                android:textSize="14dp"/>
 
         </LinearLayout>
 
@@ -203,7 +205,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Need to know" />
+                android:text="Need to know"
+                android:textColor="@color/black"
+                android:textSize="14dp"/>
 
         </LinearLayout>
 
@@ -227,7 +231,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="More" />
+                android:text="More"
+                android:textColor="@color/black"
+                android:textSize="14dp"/>
 
         </LinearLayout>
 
