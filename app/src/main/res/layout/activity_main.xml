@@ -28,57 +28,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="ITALY"
-                android:textSize="16dp"
+                android:text="@string/title_country"
+                android:textSize="16sp"
                 android:textColor="@color/white"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="ROME"
-                android:textSize="48dp"
+                android:text="@string/title_city"
+                android:textSize="48sp"
                 android:textColor="@color/white"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="IS A HISTORICAL POWERHOUSE"
-                android:textSize="14dp"
+                android:text="@string/title_description"
+                android:textSize="14sp"
                 android:textColor="@color/white"/>
 
         </LinearLayout>
-
-<!--        <TextView-->
-<!--            android:id="@+id/countryTextView"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_constraintStart_toStartOf="@id/layout2"-->
-<!--            app:layout_constraintEnd_toEndOf="@id/layout2"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintBottom_toTopOf="@id/cityTextView"-->
-<!--            app:layout_constraintHorizontal_chainStyle="packed"/>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/cityTextView"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_constraintStart_toStartOf="@id/layout2"-->
-<!--            app:layout_constraintEnd_toEndOf="@id/layout2"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/countryTextView"-->
-<!--            app:layout_constraintBottom_toTopOf="@id/titleTextView"-->
-<!--            app:layout_constraintHorizontal_chainStyle="packed"/>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/titleTextView"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_constraintStart_toStartOf="@id/layout2"-->
-<!--            app:layout_constraintEnd_toEndOf="@id/layout2"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/cityTextView"-->
-<!--            app:layout_constraintBottom_toBottomOf="@id/layout2"-->
-<!--            app:layout_constraintHorizontal_chainStyle="packed"/>-->
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -92,22 +62,22 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="LOCAL TIME"
-                android:textSize="12dp"
+                android:text="@string/title_local_time"
+                android:textSize="12sp"
                 android:textColor="@color/white"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="10:23 AM"
-                android:textSize="36dp"
+                android:text="@string/title_time"
+                android:textSize="36sp"
                 android:textColor="@color/white"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="12/09/2019"
-                android:textSize="14dp"
+                android:text="@string/title_date"
+                android:textSize="14sp"
                 android:textColor="@color/white"/>
 
         </LinearLayout>
@@ -126,24 +96,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:text="TODAY"
-                android:textSize="12dp"
+                android:text="@string/title_today"
+                android:textSize="12sp"
                 android:textColor="@color/white"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:text="-2°C"
-                android:textSize="36dp"
+                android:text="@string/title_degree"
+                android:textSize="36sp"
                 android:textColor="@color/white"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:text="Scattered clouds"
-                android:textSize="14dp"
+                android:text="@string/title_state_weather"
+                android:textSize="14sp"
                 android:textColor="@color/white"/>
 
         </LinearLayout>
@@ -155,7 +125,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#E6E6E6"
-        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintHeight_percent="0.16"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
@@ -178,9 +148,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Attractions"
-                android:textColor="@color/black"
-                android:textSize="14dp"/>
+                android:text="@string/title_attractions"
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 
@@ -205,9 +175,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Need to know"
-                android:textColor="@color/black"
-                android:textSize="14dp"/>
+                android:text="@string/title_need_to_know"
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 
@@ -231,9 +201,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="More"
-                android:textColor="@color/black"
-                android:textSize="14dp"/>
+                android:text="@string/title_more"
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 

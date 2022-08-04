@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">SecretAntroidCourse</string>
+    <string name="app_name">Secret Android Course</string>
+
+    <string name="title_country">ITALY</string>
+    <string name="title_city">ROME</string>
+    <string name="title_description">IS A HISTORICAL POWERHOUSE</string>
+    <string name="title_local_time">LOCAL TIME</string>
+    <string name="title_time">10:23 AM</string>
+    <string name="title_date">12/09/2019</string>
+    <string name="title_today">TODAY</string>
+    <string name="title_degree">-2°C</string>
+    <string name="title_state_weather">Scattered clouds</string>
+    <string name="title_attractions">Attractions</string>
+    <string name="title_need_to_know">Need to know</string>
+    <string name="title_more">More</string>
+
 </resources>
