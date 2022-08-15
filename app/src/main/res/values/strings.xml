@@ -13,5 +13,11 @@
     <string name="title_attractions">Attractions</string>
     <string name="title_need_to_know">Need to know</string>
     <string name="title_more">More</string>
+    <string name="title_parameters">Physical Parameters</string>
+    <string name="title_biography">Biography</string>
+    <string name="label_description">Saina Nehwal is an Indian professional badminton player.
+        A former world no. 1, she has won 24 international titles, which includes ten Superseries titles.
+        Although she reached the world\'s 2nd in 2009, it was only in 2015 that she was able to attain the world.
+    </string>
 
 </resources>
