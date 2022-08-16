@@ -5,73 +5,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/silver"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:background="@drawable/bg_dark_purple_30"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:contentScrim="@color/dark_purple"
-            app:expandedTitleTextAppearance="@style/CollapsingToolbarLayoutExpandedTextStyle"
-            app:title="Saina Nehwal"
             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:contentScrim="@color/dark_purple"
+            app:statusBarScrim="@android:color/transparent"
+            app:expandedTitleTextAppearance="@style/CollapsingToolbarLayoutExpandedTextStyle"
+            app:title="@string/title_player_name"
             app:expandedTitleMarginBottom="51dp">
 
-            <ImageView
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/list_and_woman"
-                app:layout_collapseMode="parallax" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:orientation="vertical"
-                android:layout_marginBottom="27dp"
-                android:layout_marginStart="34dp">
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginBottom="45dp">
+                    android:layout_marginTop="-30dp"
+                    app:cardBackgroundColor="@color/dark_purple"
+                    app:cardCornerRadius="30dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="30dp"
+                        android:src="@drawable/ic_list"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginTop="67dp"
+                        android:src="@drawable/ic_woman"
+                        tools:ignore="ContentDescription" />
 
                     <ImageView
                         android:layout_width="27dp"
                         android:layout_height="28dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="38dp"
+                        android:layout_marginBottom="88dp"
                         android:src="@drawable/ic_pbsi"
-                        android:layout_marginEnd="3dp"/>
+                        tools:ignore="ContentDescription" />
 
                     <ImageView
                         android:layout_width="27dp"
                         android:layout_height="28dp"
-                        android:src="@drawable/ic_cba"/>
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="68dp"
+                        android:layout_marginBottom="88dp"
+                        android:src="@drawable/ic_cba"
+                        tools:ignore="ContentDescription" />
 
-                </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="37dp"
+                        android:layout_marginBottom="27dp"
+                        android:text="@string/title_player_description"
+                        android:textColor="@color/white_40"
+                        android:textSize="12sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Indian badminton player"
-                    android:layout_marginStart="3dp"
-                    android:textColor="#66FFFFFF"
-                    android:textSize="12sp" />
+                </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
+            </FrameLayout>
 
             <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
+                app:popupTheme="@style/ToolbarTheme"
+                app:layout_collapseMode="pin"/>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -80,144 +101,181 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/silver"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="0dp">
 
-            <androidx.cardview.widget.CardView
+            <HorizontalScrollView
                 android:id="@+id/game_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginHorizontal="9dp"
                 android:layout_marginTop="16dp"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintTop_toTopOf="parent">
+                android:scrollbars="none"
+                android:overScrollMode="never"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/other_info">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:gravity="center">
 
-                    <LinearLayout
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginHorizontal="9dp"
+                        android:src="@drawable/bg_white_10"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:orientation="vertical"
-                        android:layout_marginVertical="13dp"
-                        android:layout_marginHorizontal="20dp">
+                        android:layout_marginTop="13dp"
+                        android:text="@string/title_game_value"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/gameTextView"
+                        app:layout_constraintEnd_toEndOf="@id/gameTextView"
+                        app:layout_constraintStart_toStartOf="@id/gameTextView"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="30"
-                            android:textSize="20dp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/gameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="37dp"
+                        android:layout_marginBottom="13dp"
+                        android:text="@string/title_game"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/minutesTextView"
+                        app:layout_constraintStart_toStartOf="@id/imageView" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Game"
-                            android:textSize="12dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:orientation="vertical"
-                        android:layout_marginVertical="13dp"
-                        android:layout_marginHorizontal="20dp">
+                        android:text="@string/title_minutes_value"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/minutesTextView"
+                        app:layout_constraintEnd_toEndOf="@id/minutesTextView"
+                        app:layout_constraintStart_toStartOf="@id/minutesTextView" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="2400"
-                            android:textSize="20dp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Minutes"
-                            android:textSize="12dp" />
+                    <TextView
+                        android:id="@+id/minutesTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="44dp"
+                        android:text="@string/title_minutes"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@id/gameTextView"
+                        app:layout_constraintEnd_toStartOf="@id/shotsTextView"
+                        app:layout_constraintStart_toEndOf="@id/gameTextView" />
 
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:orientation="vertical"
-                        android:layout_marginVertical="13dp"
-                        android:layout_marginHorizontal="20dp">
+                        android:text="@string/title_shots_value"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/shotsTextView"
+                        app:layout_constraintEnd_toEndOf="@id/shotsTextView"
+                        app:layout_constraintStart_toStartOf="@id/shotsTextView" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="16"
-                            android:textSize="20dp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/shotsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="44dp"
+                        android:text="@string/title_shots"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@id/minutesTextView"
+                        app:layout_constraintEnd_toStartOf="@id/assistsTextView"
+                        app:layout_constraintStart_toEndOf="@id/minutesTextView" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Shots"
-                            android:textSize="12dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/textView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:orientation="vertical"
-                        android:layout_marginVertical="13dp"
-                        android:layout_marginHorizontal="20dp">
+                        android:text="@string/title_assists_value"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/assistsTextView"
+                        app:layout_constraintEnd_toEndOf="@id/assistsTextView"
+                        app:layout_constraintStart_toStartOf="@id/assistsTextView" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="13"
-                            android:textSize="20dp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/assistsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="44dp"
+                        android:text="@string/title_assists"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@id/shotsTextView"
+                        app:layout_constraintEnd_toStartOf="@id/winsTextView"
+                        app:layout_constraintStart_toEndOf="@id/shotsTextView" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Assists"
-                            android:textSize="12dp" />
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/title_wins_value"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/winsTextView"
+                        app:layout_constraintEnd_toEndOf="@id/winsTextView"
+                        app:layout_constraintStart_toStartOf="@id/winsTextView" />
 
-                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/winsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="44dp"
+                        android:layout_marginEnd="52dp"
+                        android:text="@string/title_wins"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@id/assistsTextView"
+                        app:layout_constraintEnd_toEndOf="@id/imageView"
+                        app:layout_constraintStart_toEndOf="@id/assistsTextView" />
 
-                </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </androidx.cardview.widget.CardView>
+            </HorizontalScrollView>
 
             <ImageView
                 android:id="@+id/other_info"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:background="@drawable/new_bg"
+                android:background="@drawable/bg_white_30"
                 android:layout_marginHorizontal="22dp"
                 android:layout_marginVertical="18dp"
                 app:cardCornerRadius="30dp"
                 app:layout_constraintTop_toBottomOf="@id/game_info"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/parametersTextView"
@@ -242,7 +300,7 @@
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:scrollbars="horizontal"
@@ -253,7 +311,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:cardCornerRadius="20dp"
-                        android:layout_marginStart="12dp"
+                        android:layout_marginStart="80dp"
                         app:cardBackgroundColor="@color/dark_purple"
                         android:background="@color/dark_purple">
 
@@ -268,7 +326,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="20dp"
                                 android:layout_marginTop="19dp"
-                                android:text="1.80m" />
+                                android:text="@string/title_height_value" />
 
                             <TextView
                                 style="@style/Text.ParametersTitle"
@@ -276,7 +334,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="30dp"
                                 android:layout_marginBottom="26dp"
-                                android:text="Height" />
+                                android:text="@string/title_height" />
 
                         </LinearLayout>
 
@@ -302,7 +360,7 @@
                                 android:gravity="center_horizontal"
                                 android:layout_marginHorizontal="20dp"
                                 android:layout_marginTop="19dp"
-                                android:text="60kg" />
+                                android:text="@string/title_weight_value" />
 
                             <TextView
                                 style="@style/Text.ParametersTitle"
@@ -310,7 +368,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="30dp"
                                 android:layout_marginBottom="26dp"
-                                android:text="Weight" />
+                                android:text="@string/title_weight" />
 
                         </LinearLayout>
 
@@ -320,6 +378,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
+                        android:layout_marginEnd="80dp"
                         app:cardCornerRadius="20dp"
                         app:cardBackgroundColor="@color/dark_purple"
                         android:background="@color/dark_purple">
@@ -335,8 +394,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="20dp"
                                 android:layout_marginTop="19dp"
-                                android:textSize="20dp"
-                                android:text="32 Yrs"
+                                android:textSize="20sp"
+                                android:text="@string/title_age_value"
                                 android:textColor="@color/white"/>
 
                             <TextView
@@ -345,41 +404,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="30dp"
                                 android:layout_marginBottom="26dp"
-                                android:text="Age" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="12dp"
-                        app:cardCornerRadius="20dp"
-                        android:layout_marginStart="12dp"
-                        app:cardBackgroundColor="@color/dark_purple"
-                        android:background="@color/dark_purple">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/Text.ParametersValue"
-                                android:layout_width="60dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="20dp"
-                                android:layout_marginTop="19dp"
-                                android:text="1.80m" />
-
-                            <TextView
-                                style="@style/Text.ParametersTitle"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="30dp"
-                                android:layout_marginBottom="26dp"
-                                android:text="Height" />
+                                android:text="@string/title_age" />
 
                         </LinearLayout>
 
@@ -416,14 +441,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
                     android:text="@string/label_description" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
                     android:text="@string/label_description"/>
 

@@ -19,5 +19,23 @@
         A former world no. 1, she has won 24 international titles, which includes ten Superseries titles.
         Although she reached the world\'s 2nd in 2009, it was only in 2015 that she was able to attain the world.
     </string>
+    <string name="title_player_name">Saina Nehwal</string>
+    <string name="title_player_description">Indian badminton player</string>
+    <string name="title_game_value">30</string>
+    <string name="title_game">Game</string>
+    <string name="title_minutes_value">2400</string>
+    <string name="title_minutes">Minutes</string>
+    <string name="title_shots_value">16</string>
+    <string name="title_shots">Shots</string>
+    <string name="title_assists_value">13</string>
+    <string name="title_assists">Assists</string>
+    <string name="title_wins_value">20</string>
+    <string name="title_wins">Wins</string>
+    <string name="title_height_value">1.80m</string>
+    <string name="title_height">Height</string>
+    <string name="title_weight_value">60kg</string>
+    <string name="title_weight">Weight</string>
+    <string name="title_age_value">32 Yrs</string>
+    <string name="title_age">Age</string>
 
 </resources>

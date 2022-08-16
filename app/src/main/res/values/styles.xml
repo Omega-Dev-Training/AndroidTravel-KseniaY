@@ -33,4 +33,9 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:homeAsUpIndicator">@drawable/ic_back</item>
+        <item name="android:isIndicator">true</item>
+    </style>
+
 </resources>
