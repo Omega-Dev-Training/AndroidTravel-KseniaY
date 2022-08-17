@@ -18,12 +18,12 @@ class MainActivity : AppCompatActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
 
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true);
-        supportActionBar?.setHomeButtonEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true);
+//        val toolbar: Toolbar = findViewById(R.id.toolbar)
+//        setSupportActionBar(toolbar)
+//
+//        supportActionBar?.setDisplayHomeAsUpEnabled(true);
+//        supportActionBar?.setHomeButtonEnabled(true)
+//        supportActionBar?.setDisplayShowHomeEnabled(true);
 
         printAppInfo()
     }
