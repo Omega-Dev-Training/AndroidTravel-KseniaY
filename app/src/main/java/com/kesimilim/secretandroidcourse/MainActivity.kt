@@ -11,7 +11,7 @@ import androidx.appcompat.widget.Toolbar
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.layout_coordinator)
+        setContentView(R.layout.activity_cinnabon)
 
         window.statusBarColor = Color.TRANSPARENT
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)

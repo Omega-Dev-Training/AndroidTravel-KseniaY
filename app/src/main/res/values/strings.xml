@@ -37,5 +37,11 @@
     <string name="title_weight">Weight</string>
     <string name="title_age_value">32 Yrs</string>
     <string name="title_age">Age</string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="sign_up"><u>Sign up</u></string>
+    <string name="welcome_back">Welcome\nback</string>
+    <string name="please_sign_in">Please Sign In</string>
+    <string name="or_continue_as_guest">or continue as Guest</string>
+    <string name="email">Email</string>
 
 </resources>
