@@ -43,5 +43,19 @@
         <item name="navigationIcon">@drawable/ic_back</item>
     </style>
 
+    <style name="TextInputLayoutAppearance" parent="Widget.Design.TextInputLayout">
+        <!-- reference our hint & error styles -->
+        <item name="colorOnPrimary">@color/light_brown</item>
+        <item name="colorPrimary">@color/light_brown</item>
+        <item name="colorOnSurface">@color/light_brown</item>
+        <item name="colorSurface">@color/light_brown</item>
+        <item name="android:textColor">@color/light_brown</item>
+        <item name="android:textColorHint">@color/light_brown</item>
+        <item name="colorControlNormal">@color/light_brown</item>
+        <item name="colorControlActivated">@color/light_brown</item>
+        <item name="colorControlHighlight">@color/light_brown</item>
+    </style>
+
+<!--    #D9C9C5-->
 
 </resources>

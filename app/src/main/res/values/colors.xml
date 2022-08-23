@@ -11,4 +11,13 @@
     <color name="dark_purple">#37003C</color>
     <color name="silver">#ECECEC</color>
     <color name="light_purple">#D424E4</color>
+    <color name="light_brown">#D9C9C5</color>
+    <color name="selector_stroke_color">
+        <selector xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:color="?attr/colorPrimary" android:state_focused="true"/>
+            <item android:alpha="0.87" android:color="?attr/colorOnSurface" android:state_hovered="true"/>
+            <item android:alpha="0.12" android:color="?attr/colorOnSurface" android:state_enabled="false"/>
+            <item android:alpha="0.38" android:color="?attr/colorOnSurface"/>
+        </selector>
+    </color>
 </resources>
