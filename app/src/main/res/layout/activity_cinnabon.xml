@@ -8,24 +8,24 @@
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:paddingTop="44dp"
+        android:layout_marginTop="@dimen/margin_top_image_cinnabon"
+        android:paddingTop="@dimen/padding_top_image_cinnabon"
         android:src="@drawable/img_cinnabon"
-        android:scaleType="centerCrop"
+        android:scaleType="fitEnd"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.9"
-        app:layout_constraintHeight_percent="0.7"/>
+        app:layout_constraintWidth_percent="@fraction/image_width_percent"
+        app:layout_constraintHeight_percent="@fraction/image_height_percent"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-
         android:fontFamily="@font/poppins_bold"
         android:minLines="2"
         android:text="@string/welcome_back"
         android:textColor="#854E34"
-        android:textSize="34dp"
+        android:textSize="@dimen/text_welcome_size"
         app:layout_constraintVertical_bias="0.2"
         app:layout_constraintBottom_toTopOf="@+id/bg_white"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +37,7 @@
         android:layout_height="0dp"
         android:src="@drawable/bg_white_60"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHeight_percent="0.5"/>
+        app:layout_constraintHeight_percent="@fraction/height_background_cinnabon"/>
 
     <TextView
         android:id="@+id/signInTextView"
@@ -48,7 +48,7 @@
         android:textSize="24sp"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_medium"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="@dimen/margin_top_signInTextView"
         android:layout_marginStart="49dp"
         app:layout_constraintStart_toStartOf="@id/bg_white"
         app:layout_constraintEnd_toEndOf="@id/bg_white"
@@ -58,7 +58,7 @@
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="8dp"
+        android:layout_marginVertical="@dimen/margin_vertical_edit_text"
         android:layout_marginHorizontal="50dp"
         android:theme="@style/TextInputLayoutAppearance"
         app:hintEnabled="false"
@@ -75,21 +75,6 @@
             android:background="@android:color/transparent"/>
 
     </com.google.android.material.textfield.TextInputLayout>
-
-<!--    <EditText-->
-<!--        android:id="@+id/emailEditText"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginVertical="8dp"-->
-<!--        android:layout_marginHorizontal="50dp"-->
-<!--        android:backgroundTint="@color/light_brown"-->
-<!--        android:hint="@string/email"-->
-<!--        android:textColorHint="@color/light_brown"-->
-<!--        android:paddingVertical="15dp"-->
-<!--        android:textSize="14sp"-->
-<!--        app:layout_constraintStart_toStartOf="@id/bg_white"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/bg_white"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/signInTextView"/>-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordEditText"
@@ -115,64 +100,62 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-<!--    <EditText-->
-<!--        android:id="@+id/passwordEditText"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginHorizontal="50dp"-->
-<!--        android:inputType="textPassword"-->
-<!--        android:textSize="14sp"-->
-<!--        android:hint="Password"-->
-<!--        app:layout_constraintStart_toStartOf="@id/bg_white"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/bg_white"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/emailEditText"/>-->
-
     <LinearLayout
         android:id="@+id/icons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:background="@android:color/transparent"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintStart_toStartOf="@id/bg_white"
         app:layout_constraintTop_toBottomOf="@id/passwordEditText"
         app:layout_constraintBottom_toTopOf="@id/guestTextView">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/facebookIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_facebook"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_facebook" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/googleIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="?selectableItemBackgroundBorderless"
             android:src="@drawable/ic_google" />
 
     </LinearLayout>
 
-    <TextView
+    <Button
         android:id="@+id/guestTextView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:textAllCaps="false"
+        android:background="?selectableItemBackground"
+        android:padding="@dimen/padding_guest_button"
         android:fontFamily="@font/poppins_medium"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="35dp"
         android:gravity="center_horizontal"
         android:text="@string/or_continue_as_guest"
         android:textColor="#828282"
-        android:textSize="10dp"
+        android:textSize="10sp"
         app:layout_constraintVertical_bias="0.5"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/icons" />
+        app:layout_constraintTop_toBottomOf="@id/icons"
+        app:layout_constraintStart_toStartOf="@id/bg_white"
+        app:layout_constraintEnd_toEndOf="@id/bg_white"/>
 
-    <TextView
+    <Button
         android:id="@+id/forgotPasswordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="@dimen/margin_start_forgotPasswordTextView"
+        android:textAllCaps="false"
+        android:background="?selectableItemBackground"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/forgot_password"
         android:textColor="#50CAD9"
@@ -182,10 +165,12 @@
         app:layout_constraintStart_toStartOf="@id/bg_white"
         app:layout_constraintTop_toBottomOf="@+id/guestTextView" />
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="@dimen/margin_start_forgotPasswordTextView"
+        android:textAllCaps="false"
+        android:background="?selectableItemBackground"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/sign_up"
         android:textColor="#50CAD9"
@@ -197,8 +182,8 @@
 
 
     <ImageView
-        android:layout_width="145dp"
-        android:layout_height="145dp"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
         android:src="@drawable/ic_sign_in_image"
         android:paddingTop="20dp"
         android:layout_marginEnd="20dp"

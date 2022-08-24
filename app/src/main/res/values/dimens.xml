@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <fraction name="height_background_cinnabon">0.5</fraction>
+    <dimen name="margin_top_signInTextView">57dp</dimen>
+    <dimen name="padding_top_image_cinnabon">44dp</dimen>
+    <dimen name="margin_top_image_cinnabon">0dp</dimen>
+    <dimen name="button_size">145dp</dimen>
+    <dimen name="margin_start_forgotPasswordTextView">50dp</dimen>
+    <dimen name="text_welcome_size">34sp</dimen>
+    <fraction name="image_width_percent">0.9</fraction>
+    <fraction name="image_height_percent">0.7</fraction>
+    <dimen name="padding_guest_button">10dp</dimen>
+    <dimen name="margin_vertical_edit_text">8dp</dimen>
+
+</resources>
